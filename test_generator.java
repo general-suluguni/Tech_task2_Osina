@@ -7,18 +7,18 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Long> numbers = new ArrayList<>();
+        ArrayList<Integer> numbers = new ArrayList<>();
         Random random = new Random();
         System.out.println("Введите необходимое количество чисел в файле: ");
         Scanner scan = new Scanner(System.in);
         try {
             int len = scan.nextInt();
             for (int i = 0; i < len; i++) {
-                numbers.add(random.nextLong());
+                numbers.add(random.nextInt());
             }
             String testfile_name = "generated_test.txt";
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(testfile_name))) {
-                for (Long num : numbers) {
+                for (Integer num : numbers) {
                     writer.write(num.toString());
                     writer.write(" ");
                 }
